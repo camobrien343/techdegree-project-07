@@ -1,4 +1,4 @@
-
+// Dependencies for app and routes
 const express = require("express");
 const Twit = require("twit");
 const app = express();
@@ -10,8 +10,6 @@ app.set("view engine", "pug");
 
 // get the routes
 app.use('/', routes);
-
-
 
 // create server
 app.listen(3000, () => {
