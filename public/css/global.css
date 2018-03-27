@@ -5,6 +5,25 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+.error {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.error .error-text  {
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-top: 30px;
+  overflow-x: scroll;
+}
+.error .error-text pre {
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+}
+
 /* line 19, ../sass/circle/core/_reset.sass */
 body {
   margin: 0;
@@ -2226,6 +2245,24 @@ body {
   -o-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
+
+.profile--pic {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 54px;
+  height: 54px;
+  float: left;
+  margin: -15px 10px -15px 0px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  -webkit-transition: box-shadow 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  -ms-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
 /* line 87, ../sass/global.sass */
 a:hover .app--avatar {
   box-shadow: 0 0 0 4px #1da1f2 inset;
