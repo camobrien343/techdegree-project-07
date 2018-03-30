@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Twit = require('twit');
+const moment = require('moment');
 const config = require('./config.js');
 const twit = new Twit(config);
+
+let userName;
 
 router.get('/', (req, res, err) => {
   twit.get('account/verify_credentials', { skip_status: true })
@@ -10,7 +13,7 @@ router.get('/', (req, res, err) => {
       console.log('caught error', err.stack)
     })
     .then(function (response) {
-      return twit.get('statuses/user_timeline', { screen_name: "camobrien1", count: 5 }, function (err, data, response) {
+      return twit.get('statuses/user_timeline', { screen_name: userName, count: 5 }, function (err, data, response) {
 
         if (err) {
           return next(err)
@@ -66,6 +69,7 @@ router.get('/', (req, res, err) => {
 
         req.time1 = timesArray[0];
         req.time2 = timesArray[1];
+        console.log(req.time1);
         req.time3 = timesArray[2];
         req.time4 = timesArray[3];
         req.time5 = timesArray[4];
@@ -78,7 +82,7 @@ router.get('/', (req, res, err) => {
         req.userCount = tweets[0].user.friends_count;
       })
       .then(function (response) {
-        return twit.get('friends/list', { screen_name: "camobrien1", count: 5 }, function (err, data, response) {
+        return twit.get('friends/list', { screen_name: userName, count: 5 }, function (err, data, response) {
 
           if (err) {
             return next(err)
@@ -177,6 +181,7 @@ router.get('/', (req, res, err) => {
     })
     .then((response) => {
       res.render("index", {
+        moment: moment,
         follows1: req.names1,
         follows2: req.names2,
         follows3: req.names3,

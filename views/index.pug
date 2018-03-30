@@ -70,7 +70,8 @@ html(lang="en")
                 .app--section
                     ul.app--tweet--list
                      li
-                        strong.app--tweet--timestamp= time1
+                        strong.app--tweet--timestamp #{moment(new Date(time1)).fromNow()}
+                        //- strong.app--tweet--timestamp #{moment(time1, 'MM/DD/YYYY', true).format().fromNow()}
                         a.app--tweet--author
                             .app--avatar(style=`background-image:url(${profileImage})`)
                             h4= userName
@@ -103,7 +104,7 @@ html(lang="en")
                                          C35,4.1,30.9,0,25.8,0L25.8,0z")
                                      strong= favCount1
                          li
-                           strong.app--tweet--timestamp= time2
+                           strong.app--tweet--timestamp #{moment(new Date(time2)).fromNow()}
                            a.app--tweet--author
                                .app--avatar(style=`background-image:url(${profileImage})`)
                                h4= userName
@@ -136,7 +137,7 @@ html(lang="en")
                                           C35,4.1,30.9,0,25.8,0L25.8,0z")
                                       strong= favCount2
                            li
-                             strong.app--tweet--timestamp= time3
+                             strong.app--tweet--timestamp #{moment(new Date(time3)).fromNow()}
                              a.app--tweet--author
                                  .app--avatar(style=`background-image:url(${profileImage})`)
                                  h4= userName
@@ -170,7 +171,7 @@ html(lang="en")
                                          strong= favCount3
 
                                li
-                                 strong.app--tweet--timestamp= time4
+                                 strong.app--tweet--timestamp #{moment(new Date(time4)).fromNow()}
                                  a.app--tweet--author
                                      .app--avatar(style=`background-image:url(${profileImage})`)
                                      h4= userName
@@ -203,7 +204,7 @@ html(lang="en")
                                                  C35,4.1,30.9,0,25.8,0L25.8,0z")
                                              strong= favCount4
                                    li
-                                     strong.app--tweet--timestamp= time5
+                                     strong.app--tweet--timestamp #{moment(new Date(time5)).fromNow()}
                                      a.app--tweet--author
                                          .app--avatar(style=`background-image:url(${profileImage})`)
                                          h4= userName
